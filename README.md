@@ -112,68 +112,92 @@ crm-arcar-hb/
 
 ## Como Rodar o Projeto
 
-### Pre-requisitos
+### Pré-requisitos
+
 - Node.js 18+
 - NPM ou Yarn
 - Git
 
 ### Passo a Passo
 
-1. Clone o repositorio
+1. Clone o repositório
+
+```bash
 git clone https://github.com/danielbarcellos/crm-arcar-hb.git
 cd crm-arcar-hb
+```
 
-2. Instale as dependencias do frontend
+2. Instale as dependências do frontend
+
+```bash
 cd frontend
 npm install
+```
 
-3. Instale as dependencias do backend
+3. Instale as dependências do backend
+
+```bash
 cd ../backend/src/bff
 npm install
 cd ../services/clientes
 npm install
+```
 
 4. Inicie o backend (3 terminais diferentes)
 
-Terminal 1 - Servico de Clientes
+**Terminal 1 - Serviço de Clientes**
+```bash
 cd backend/src/services/clientes
 npm run dev
+```
 
-Terminal 2 - BFF
+**Terminal 2 - BFF**
+```bash
 cd backend/src/bff
 npm run dev
+```
 
-Terminal 3 - Frontend
+**Terminal 3 - Frontend**
+```bash
 cd frontend
 npm start
+```
 
 5. Acesse o sistema
+
+```
 Frontend: http://localhost:3000
 BFF: http://localhost:3000/api
-Servico Clientes: http://localhost:3001
+Serviço Clientes: http://localhost:3001
+```
 
 ---
 
 ## Scripts Disponiveis
 
 ### Frontend
+```bash
 npm start          - Inicia o servidor de desenvolvimento
 npm run build      - Gera a build de producao
 npm test           - Executa os testes
+```
 
 ### Backend
+```bash
 npm run dev        - Inicia o servidor com hot-reload
 npm start          - Inicia o servidor em producao
-
+```
 ---
 
 ## Deploy
 
 ### Deploy manual com Docker
+```bash
 docker build -t arcar-frontend -f frontend/Dockerfile .
 docker build -t arcar-bff -f backend/Dockerfile.bff .
 docker build -t arcar-clientes -f backend/services/clientes/Dockerfile .
 docker-compose up -d
+```
 
 ### CI/CD com GitHub Actions
 O projeto inclui workflows configurados para testes automaticos, build de imagens Docker e deploy em cloud.
