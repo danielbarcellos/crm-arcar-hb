@@ -59,41 +59,54 @@ O ARCAR HB é um CRM desenvolvido sob medida para oficinas de ar condicionado au
 
 ## Estrutura do Projeto
 
+```
 crm-arcar-hb/
-|-- frontend/
-|   |-- src/
-|   |   |-- components/
-|   |   |   |-- Layout.tsx
-|   |   |-- pages/
-|   |   |   |-- Dashboard.tsx
-|   |   |   |-- Clientes.tsx
-|   |   |   |-- ClienteForm.tsx
-|   |   |   |-- Veiculos.tsx
-|   |   |   |-- VeiculoForm.tsx
-|   |   |   |-- OrdensServico.tsx
-|   |   |   |-- OSForm.tsx
-|   |   |   |-- OSSVisualizar.tsx
-|   |   |-- services/
-|   |   |   |-- clienteService.ts
-|   |   |   |-- veiculoService.ts
-|   |   |   |-- osService.ts
-|   |   |   |-- exportService.ts
-|   |   |-- types/
-|   |   |   |-- Cliente.ts
-|   |   |   |-- Veiculo.ts
-|   |   |   |-- OrdemServico.ts
-|   |   |-- App.tsx
-|   |   |-- index.tsx
-|   |   |-- theme.ts
-|   |-- package.json
-|-- backend/
-|   |-- src/
-|       |-- bff/
-|       |-- services/
-|-- .github/
-|   |-- workflows/
-|-- docker-compose.yml
-|-- README.md
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── Layout.tsx
+│   │   ├── pages/
+│   │   │   ├── Dashboard.tsx
+│   │   │   ├── Clientes.tsx
+│   │   │   ├── ClienteForm.tsx
+│   │   │   ├── Veiculos.tsx
+│   │   │   ├── VeiculoForm.tsx
+│   │   │   ├── OrdensServico.tsx
+│   │   │   ├── OSForm.tsx
+│   │   │   └── OSSVisualizar.tsx
+│   │   ├── services/
+│   │   │   ├── clienteService.ts
+│   │   │   ├── veiculoService.ts
+│   │   │   ├── osService.ts
+│   │   │   └── exportService.ts
+│   │   ├── types/
+│   │   │   ├── Cliente.ts
+│   │   │   ├── Veiculo.ts
+│   │   │   └── OrdemServico.ts
+│   │   ├── App.tsx
+│   │   ├── index.tsx
+│   │   └── theme.ts
+│   ├── package.json
+│   └── tsconfig.json
+├── backend/
+│   └── src/
+│       ├── bff/
+│       │   ├── index.js
+│       │   ├── routes/
+│       │   └── package.json
+│       └── services/
+│           └── clientes/
+│               ├── index.js
+│               └── package.json
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── cd.yml
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+```
 
 ---
 
