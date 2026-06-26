@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # LocalStack para simular AWS localmente
+  localstack:
+    image: localstack/localstack:latest
+    container_name: arcar-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=dynamodb
+      - AWS_DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - ./localstack-data:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - arcar-network
+
+  # BFF (API Gateway)
+  bff:
+    build:
+      context: ./backend/src/bff
+      dockerfile: Dockerfile
+    container_name: arcar-bff
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - CLIENTES_SERVICE_URL=http://clientes:3001
+    depends_on:
+      - clientes
+    networks:
+      - arcar-network
+
+  # Microsserviço de Clientes
+  clientes:
+    build:
+      context: ./backend/src/services/clientes
+      dockerfile: Dockerfile
+    container_name: arcar-clientes
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - DYNAMODB_ENDPOINT=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+    depends_on:
+      - localstack
+    networks:
+      - arcar-network
+
+networks:
+  arcar-network:
+    driver: bridge
