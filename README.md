@@ -1,62 +1,54 @@
-# 🚗 ARCAR HB - Sistema de Gestão para Oficina de Ar Condicionado Automotivo
+# ARCAR HB - Sistema de Gestão para Oficina de Ar Condicionado Automotivo
 
-[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
-[![Material-UI](https://img.shields.io/badge/MUI-5.x-blue)](https://mui.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-
-Sistema completo de gestão para a oficina **ARCAR HB**, especializada em manutenção de ar condicionado automotivo.
+Sistema completo de gestão para a oficina ARCAR HB, especializada em manutenção de ar condicionado automotivo.
 
 ---
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
-O **ARCAR HB** é um CRM desenvolvido sob medida para oficinas de ar condicionado automotivo. Com ele você pode gerenciar clientes, veículos e ordens de serviço de forma integrada e eficiente.
+O ARCAR HB é um CRM desenvolvido sob medida para oficinas de ar condicionado automotivo. Com ele você pode gerenciar clientes, veículos e ordens de serviço de forma integrada e eficiente.
 
-### 🎯 Funcionalidades
+### Funcionalidades
 
-#### 👤 Clientes
-- ✅ Cadastro completo com validação
-- ✅ Máscaras para telefone e CEP
-- ✅ Busca por nome, email ou telefone
-- ✅ Paginação e ordenação
-- ✅ Visualização em tabela ou cards
-- ✅ Exportação para Excel, PDF e CSV
-- ✅ Filtros avançados por cidade e estado
-- ✅ Seleção múltipla e ações em lote
+#### Clientes
+- Cadastro completo com validacao
+- Mascaras para telefone e CEP
+- Busca por nome, email ou telefone
+- Paginacao e ordenacao
+- Visualizacao em tabela ou cards
+- Exportacao para Excel, PDF e CSV
+- Filtros avancados por cidade e estado
+- Selecao multipla e acoes em lote
 
-#### 🚗 Veículos
-- ✅ Cadastro vinculado a clientes
-- ✅ Máscara para placa
-- ✅ Busca por placa, marca ou modelo
-- ✅ Paginação e ordenação
-- ✅ Visualização em tabela ou cards
+#### Veiculos
+- Cadastro vinculado a clientes
+- Mascara para placa
+- Busca por placa, marca ou modelo
+- Paginacao e ordenacao
+- Visualizacao em tabela ou cards
 
-#### 🔧 Ordens de Serviço
-- ✅ Status: Aberta, Em Andamento, Finalizada, Cancelada
-- ✅ Itens dinâmicos com cálculo automático
-- ✅ Alteração de status com diálogo interativo
-- ✅ Busca por número, cliente ou veículo
-- ✅ Edição bloqueada para OS finalizadas/canceladas
-- ✅ Visualização detalhada
+#### Ordens de Servico
+- Status: Aberta, Em Andamento, Finalizada, Cancelada
+- Itens dinamicos com calculo automatico
+- Alteracao de status com dialogo interativo
+- Busca por numero, cliente ou veiculo
+- Edicao bloqueada para OS finalizadas ou canceladas
+- Visualizacao detalhada
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Frontend
-| Tecnologia | Versão | Descrição |
-|------------|--------|-----------|
-| React | 18.x | Biblioteca para interfaces de usuário |
-| TypeScript | 5.x | Tipagem estática para JavaScript |
-| Material-UI | 5.x | Componentes UI prontos e customizáveis |
-| React Router DOM | 6.x | Navegação entre páginas |
-| React Query | 4.x | Gerenciamento de estado assíncrono |
-| Axios | 1.x | Cliente HTTP para API |
-| Recharts | 2.x | Gráficos para dashboard |
-| xlsx | 0.18.x | Exportação para Excel |
-| jspdf | 2.x | Exportação para PDF |
+- React 18.x
+- TypeScript 5.x
+- Material-UI 5.x
+- React Router DOM 6.x
+- React Query 4.x
+- Axios 1.x
+- Recharts 2.x
+- xlsx (Exportacao Excel)
+- jspdf (Exportacao PDF)
 
 ### Backend (em desenvolvimento)
 - Node.js
@@ -65,4 +57,139 @@ O **ARCAR HB** é um CRM desenvolvido sob medida para oficinas de ar condicionad
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
+
+crm-arcar-hb/
+|-- frontend/
+|   |-- src/
+|   |   |-- components/
+|   |   |   |-- Layout.tsx
+|   |   |-- pages/
+|   |   |   |-- Dashboard.tsx
+|   |   |   |-- Clientes.tsx
+|   |   |   |-- ClienteForm.tsx
+|   |   |   |-- Veiculos.tsx
+|   |   |   |-- VeiculoForm.tsx
+|   |   |   |-- OrdensServico.tsx
+|   |   |   |-- OSForm.tsx
+|   |   |   |-- OSSVisualizar.tsx
+|   |   |-- services/
+|   |   |   |-- clienteService.ts
+|   |   |   |-- veiculoService.ts
+|   |   |   |-- osService.ts
+|   |   |   |-- exportService.ts
+|   |   |-- types/
+|   |   |   |-- Cliente.ts
+|   |   |   |-- Veiculo.ts
+|   |   |   |-- OrdemServico.ts
+|   |   |-- App.tsx
+|   |   |-- index.tsx
+|   |   |-- theme.ts
+|   |-- package.json
+|-- backend/
+|   |-- src/
+|       |-- bff/
+|       |-- services/
+|-- .github/
+|   |-- workflows/
+|-- docker-compose.yml
+|-- README.md
+
+---
+
+## Como Rodar o Projeto
+
+### Pre-requisitos
+- Node.js 18+
+- NPM ou Yarn
+- Git
+
+### Passo a Passo
+
+1. Clone o repositorio
+git clone https://github.com/danielbarcellos/crm-arcar-hb.git
+cd crm-arcar-hb
+
+2. Instale as dependencias do frontend
+cd frontend
+npm install
+
+3. Instale as dependencias do backend
+cd ../backend/src/bff
+npm install
+cd ../services/clientes
+npm install
+
+4. Inicie o backend (3 terminais diferentes)
+
+Terminal 1 - Servico de Clientes
+cd backend/src/services/clientes
+npm run dev
+
+Terminal 2 - BFF
+cd backend/src/bff
+npm run dev
+
+Terminal 3 - Frontend
+cd frontend
+npm start
+
+5. Acesse o sistema
+Frontend: http://localhost:3000
+BFF: http://localhost:3000/api
+Servico Clientes: http://localhost:3001
+
+---
+
+## Scripts Disponiveis
+
+### Frontend
+npm start          - Inicia o servidor de desenvolvimento
+npm run build      - Gera a build de producao
+npm test           - Executa os testes
+
+### Backend
+npm run dev        - Inicia o servidor com hot-reload
+npm start          - Inicia o servidor em producao
+
+---
+
+## Deploy
+
+### Deploy manual com Docker
+docker build -t arcar-frontend -f frontend/Dockerfile .
+docker build -t arcar-bff -f backend/Dockerfile.bff .
+docker build -t arcar-clientes -f backend/services/clientes/Dockerfile .
+docker-compose up -d
+
+### CI/CD com GitHub Actions
+O projeto inclui workflows configurados para testes automaticos, build de imagens Docker e deploy em cloud.
+
+---
+
+## Licenca
+
+Este projeto e propriedade da ARCAR HB - Todos os direitos reservados.
+
+---
+
+## Creditos
+
+### DeepSeek - Inteligencia Artificial
+
+Este sistema foi desenvolvido com o suporte e orientacao do DeepSeek, que ajudou a construir este sistema do zero com paciencia, codigo limpo e muita dedicacao.
+
+---
+
+## Contato
+
+Email: suporte@arcar.com.br
+Website: www.arcar.com.br
+
+---
+
+Ultima atualizacao: 26 de Junho de 2026
+
+Desenvolvido com ❤️ pela equipe ARCAR HB
+
+Made with ❤️ by ARCAR HB Team
